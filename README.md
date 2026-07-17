@@ -25,19 +25,29 @@ Shape: 35,040 rows × 11 columns
 Columns:
 
 date (object) — Timestamp of the reading
+
 Usage_kWh (float) — Energy usage in kWh
+
 Lagging_Current_Reactive.Power_kVarh (float) — Lagging reactive power
+
 Leading_Current_Reactive_Power_kVarh (float) — Leading reactive power
+
 CO2(tCO2) (float) — CO2 emissions
+
 Lagging_Current_Power_Factor (float) — Lagging power factor
+
 Leading_Current_Power_Factor (float) — Leading power factor
+
 NSM (int) — Number of seconds since midnight
+
 WeekStatus (object) — Weekday / Weekend
+
 Day_of_week (object) — Day name
+
 Load_Type (object) — Target: Light / Medium / Maximum Load
 
 Only the 7 numerical columns above are used as input features for PCA; date, WeekStatus, and Day_of_week are excluded from the model.
-Note: The dataset file itself is not included in this repo. Place your own copy in the project folder and update the path in the notebook (pd.read_excel('Week 2 (DataSet).xlsx')).
+
 🧠 Machine Learning Workflow
 Raw Dataset (35,040 rows × 11 columns)
 → Select 7 Numerical Features
@@ -101,17 +111,6 @@ Response:
 }
 }
 Internally, the API scales the raw input with the saved scaler.pkl, transforms it with pca_transformer.pkl, and passes the resulting 3 components to best_random_forest_model.pkl for the final prediction.
-⚙️ Installation
-
-Clone the repository
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
-Create a virtual environment
-python -m venv venv
-
-Activate it:
-Windows: venv\Scripts\activate
-Linux / macOS: source venv/bin/activate
 
 Install dependencies
 pip install -r requirements.txt
