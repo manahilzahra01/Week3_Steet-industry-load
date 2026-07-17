@@ -115,15 +115,17 @@ Internally, the API scales the raw input with the saved scaler.pkl, transforms i
 Install dependencies
 pip install -r requirements.txt
 
-🛠️ Retraining the Model
+- Retraining the Model
 To rebuild everything from scratch, simply re-run the notebook end-to-end:
 jupyter nbconvert --to notebook --execute Steel_Industry_Load_Prediction.ipynb
 This regenerates best_random_forest_model.pkl, scaler.pkl, and pca_transformer.pkl with the latest data.
-📦 Technology Stack
+
+- Technology Stack
 Backend: FastAPI, Uvicorn
 Machine Learning: Scikit-Learn (StandardScaler, PCA, Logistic Regression, Ridge Classifier, Decision Tree, Random Forest), Joblib
 Data Processing: Pandas, NumPy
 Visualization: Matplotlib
 Deployment (Colab): nest_asyncio, pyngrok / localtunnel
-🎯 Project Objective
+
+   -Project Objective
 To accurately classify the operational load type of a steel manufacturing facility while reducing feature dimensionality through PCA, and to deploy the resulting model as a usable, real-time prediction API.
